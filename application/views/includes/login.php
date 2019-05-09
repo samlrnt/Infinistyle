@@ -25,13 +25,14 @@
           <div class="text-muted text-center mt-2 mb-2"><strong>Sign In</strong></div>
         </div>
         <div class="card-body px-lg-5 py-lg-5">
+        <!--FORM-->
           <form role="form">
             <div class="form-group mb-3">
               <div class="input-group input-group-alternative">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <input class="form-control" placeholder="Email" type="email">
+                <input class="form-control" placeholder="Username" type="text" name="username" id="username">
               </div>
             </div>
             <div class="form-group">
@@ -39,14 +40,8 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
-                <input class="form-control" placeholder="Password" type="password">
+                <input class="form-control" placeholder="********" type="password" name="password" id="password">
               </div>
-            </div>
-            <div class="custom-control custom-control-alternative custom-checkbox">
-              <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-              <label class="custom-control-label" for=" customCheckLogin">
-                <span class="text-muted">Remember me</span>
-              </label>
             </div>
             <div class="text-center">
               <button type="button" class="btn btn-primary mt-4">Sign in</button>
