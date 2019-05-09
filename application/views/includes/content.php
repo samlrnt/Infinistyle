@@ -33,23 +33,21 @@
             <div class="col-md-12">
                 <div class="card-group">
                 <?php foreach($result as $card){ ?>
-                    <div class="col-md-3">
-
+                    <div class="col-md-3 mt-2 mb-2">
                         <div class="card card-lift--hover shadow border-0">
                             <img src="<?php echo $card['productImage'] ?>" alt="<?php echo $card['productName']?>">
                             <div class="card-body py-5">
-                                <h4 class="text-primary text-uppercase"><?php echo $card['productName']?></h4>
+                                <h4 class="text-success text-uppercase"><?php echo $card['productName']?></h4>
                                 <p class="description mt-3"><?php echo $card['productDescription']?></p>
                                 <div class="product-price font-weight-bold mb-3">
                                   <span>Rp <?php echo $card['productPrice']?></span>
                                 </div>
-                                <button class="btn btn-icon btn-3 btn-primary" type="button">
-                                    <span class="btn-inner--text" href="<?php echo "#"?>">Details</span>
+                                <button class="btn btn-icon btn-3 btn-warning" type="button">
+                                    <span class="btn-inner--text" href="#"><a class="text-white" href="<?php echo base_url('home/product_details');?>">Details</a></span>
                                 </button>
                             </div>
                         </div>
                         </div>
-
                 <?php } ?>
                 </div>
               <!-- <div class="row row-grid">

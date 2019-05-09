@@ -15,13 +15,20 @@
     .card{
         border : none;
     }
+	
+	.content{
+		margin-top:5%;
+		margin-bottom:5%;
+		background:white;
+		width:80%;
+	}
 </style>
 <section>
-  <div class="container">
-    <div class="card mt-5">
+  <div class="container content">
+    <div class=" mt-5">
       <div class="row">
           <div class="col-md-6">
-            <div class="card-header bg-gradient-warning">
+            <div class="card-header">
                 <div class="card-img-bottom text-dark text-center">
                     <img src="argon/assets/img/pj.jpg" alt="product image here">
                 </div>

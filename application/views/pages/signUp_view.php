@@ -7,9 +7,7 @@
     </head>
     <body class="bg-default g-sidenav-show g-sidenav-pinned" data-gr-c-s-loaded="true">
         <?php
-            echo $nav;
             echo $register;
-            echo $footer;
         ?>
     </body>
         <?php echo $js; ?>
