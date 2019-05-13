@@ -10,11 +10,11 @@ class Details extends CI_Controller{
 
     public function index(){
         $data['css'] = $this->load->view('includes/css.php', NULL, TRUE);
-        $data['header'] = $this->load->view('includes/header_view.php', NULL, TRUE);
-        $data['details'] = $this->load->view('includes/details.php', NULL, TRUE);
-        $data['footer'] = $this->load->view('includes/footer_view.php', NULL, TRUE);
+        $data['header'] = $this->load->view('includes/shop/header.php', NULL, TRUE);
+        $data['details'] = $this->load->view('includes/shop/details.php', NULL, TRUE);
+        $data['footer'] = $this->load->view('includes/shop/footer.php', NULL, TRUE);
         $data['js'] = $this->load->view('includes/js.php', NULL, TRUE);
-        $this->load->view('pages/productDetails_view.php', $data);
+        $this->load->view('pages/shop/productDetails_view.php', $data);
     }
 
 }

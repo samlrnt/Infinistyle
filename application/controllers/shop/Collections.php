@@ -11,11 +11,11 @@ class Collections extends CI_Controller{
     public function index(){
         $card['result'] = $this->product_model->get_all_product();
         $data['css'] = $this->load->view('includes/css.php', NULL, TRUE);
-        $data['header'] = $this->load->view('includes/header_view.php', NULL, TRUE);
-        $data['content'] = $this->load->view('includes/content.php', $card, TRUE);
-        $data['footer'] = $this->load->view('includes/footer_view.php', NULL, TRUE);
+        $data['header'] = $this->load->view('includes/shop/header.php', NULL, TRUE);
+        $data['content'] = $this->load->view('includes/shop/content.php', $card, TRUE);
+        $data['footer'] = $this->load->view('includes/shop/footer.php', NULL, TRUE);
         $data['js'] = $this->load->view('includes/js.php', NULL, TRUE);
-        $this->load->view('pages/homePage_view.php', $data);
+        $this->load->view('pages/shop/homePage_view.php', $data);
     }
 }
 
