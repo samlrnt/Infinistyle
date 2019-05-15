@@ -8,12 +8,12 @@ class Customers extends CI_Controller {
     }
 
     public function index(){
-      $this->load->model('Customer_model');
-      $data['title'] = "Customers";
-      $data['customer'] = $this->Customer_model->get_all_customer();
-      $this->load->view('admin/headerAdmin_view', $data);
-      $this->load->view('admin/customerList_view', $data);
-      $this->load->view('admin/footerAdmin_view');
+        $this->load->model('Customer_model');
+        $data['title'] = "Customers";
+        $data['customer'] = $this->Customer_model->get_all_customer();
+        $this->load->view('admin/headerAdmin_view', $data);
+        $this->load->view('admin/customerList_view', $data);
+        $this->load->view('admin/footerAdmin_view');
     }
 
     public function update_customer(){

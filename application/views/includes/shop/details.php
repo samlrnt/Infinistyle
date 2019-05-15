@@ -15,7 +15,7 @@
     .card{
         border : none;
     }
-	
+
 	.content{
 		margin-top:5%;
 		margin-bottom:5%;
@@ -36,9 +36,9 @@
           </div>
         <div class="col-md-6">
           <div class="card-body">
-            <h4 class="card-title mt-6 text-center">Item Name</h4>
-            <p class="card-text text-center">Short product description</p>
-            <p class="card-text text-center">Category name</p>
+            <h4 class="card-title mt-6 text-center"><?php echo $product->productID;?></h4>
+            <p class="card-text text-center"><?php echo $product->productDescription;?></p>
+            <p class="card-text text-center"><?php echo $product->productDescription;?></p>
             <center>
                 <button class="btn btn-icon btn-3 btn-primary" type="button">
                     <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>

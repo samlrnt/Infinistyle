@@ -2,7 +2,7 @@
 <div class="main-content">
     <!-- Page Content -->
     <!--Carousel-->
-    <div id="carouselExampleIndicators" class="carousel slide mb-5" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide mb-5" data-ride="carousel"> -->
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -26,7 +26,7 @@
         </a>
     </div>
     <!-- Shop Now -->
-    <!-- <button type="button" class="btn btn-secondary btn-lg btn-block">SHOP NOW</button> -->
+    <button type="button" class="btn btn-secondary btn-lg btn-block">SHOP NOW</button>
     <!-- Product Cards -->
     <div class="container mt-5">
           <div class="row justify-content-center">
@@ -41,10 +41,12 @@
                                 <p class="description mt-3"><?php echo $card['productDescription']?></p>
                                 <div class="product-price font-weight-bold mb-3">
                                   <span>Rp <?php echo $card['productPrice']?></span>
-                                </div>
-                                <button class="btn btn-icon btn-3 btn-warning" type="button">
-                                    <span class="btn-inner--text" href="#"><a class="text-white" href="<?php echo base_url('shop/details');?>">Details</a></span>
-                                </button>
+                              </div>
+                              <form class="" action="index.html" method="post">
+                                  <button class="btn btn-icon btn-3 btn-warning" type="submit">
+                                      <?php echo "<button type=\"button\" class=\"btn btn-warning\"><a  class=\"text-white\" href='".site_url('Details/display?id='.$card['productID'])."' style=\"color:white;\">Edit</a></button></td>";?>
+                                  </button>
+                              </form>
                             </div>
                         </div>
                         </div>

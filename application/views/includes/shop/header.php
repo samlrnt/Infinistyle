@@ -9,7 +9,7 @@
             <div id="navbar-collapse" class="navbar-collapse navbar-custom-collapse collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-inner--text text-white">Home</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-inner--text text-white">About Us</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-inner--text text-white">About ME</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/sign_up') ?>"><span class="nav-link-inner--text text-white">Sign Up</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/sign_in') ?>"><span class="nav-link-inner--text text-white">Sign In</span></a></li>
                 </ul>
