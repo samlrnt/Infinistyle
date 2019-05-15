@@ -37,10 +37,16 @@ class Admin extends CI_Controller {
     }
 
     public function index(){
-        $data["title"] = "Dashboard";
-        $this->load->view('admin/headerAdmin_view',$data);
-        $this->load->view('admin/adminDashboard_view');
-        $this->load->view('admin/footerAdmin_view');
+        $this->load->model('Admin_model');
+        $t['title'] = "Dashboard";
+        $data['css'] = $this->load->view('includes/css.php', NULL, TRUE);
+        $data['js'] =  $this->load->view('includes/js.php', NULL, TRUE);
+        $data['sidenav'] = $this->load->view('includes/admin/sidenav',NULL,TRUE);
+        $data['title'] = $this->load->view('includes/title',$t,TRUE);
+        $data['header'] = $this->load->view('includes/admin/header',NULL,TRUE);
+        $data['dashboard'] = $this->load->view('includes/admin/dashboard', NULL, TRUE);
+        $data['footer'] = $this->load->view('includes/admin/footer', NULL, TRUE);
+        $this->load->view('pages/admin/dashboard_view', $data);
     }
 
     public function profile(){
