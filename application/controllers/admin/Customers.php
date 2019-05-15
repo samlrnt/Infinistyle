@@ -6,7 +6,7 @@ class Customers extends CI_Controller {
     public function __construct(){
         parent::__construct();
     }
-    
+
     public function index(){
       $this->load->model('Customer_model');
       $data['title'] = "Customers";
@@ -27,7 +27,7 @@ class Customers extends CI_Controller {
       // $this->Product_model->update($values);
       redirect("admin/customers");
     }
-    
+
     public function delete_customer(){
       // $values = [
       //   "ProductID" => $this->input->post('product_id'),
