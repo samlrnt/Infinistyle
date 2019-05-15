@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
- * ADMIN PRIVILEGES : 
+ * ADMIN PRIVILEGES :
  * get
  *  products (all / unit)
  *  customers (all / unit)
@@ -11,22 +11,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *  shoppingcarts (all / unit)
  *  shoppingcart with its details (shoppingcartdetails)  (all / unit)
  *  admin profile(all / unit) ?not sure
- * 
+ *
  * insert
  *  products
- * 
+ *
  * update
  *  products
  *  orders
- * 
- * */ 
+ *
+ * */
 
 /* *
  * HOW TO ADD RELATIONAL TABLE (LIKE ORDERS & SHOPPINGCARTS)
  * -> insert data ke table orders | shoppingcarts.
  * -> get id of the latest orders | shoppingcarts update (using $db->insert_id; , src : https://www.w3schools.com/php/php_mysql_insert_lastid.asp)
  * -> insert datadetail + xxxId into xxxdetails.
- * 
+ *
  * just my initial idea. Hope it werks!
  * */
 class Admin extends CI_Controller {
@@ -34,7 +34,7 @@ class Admin extends CI_Controller {
     public function __construct(){
         parent::__construct();
     }
-    
+
     public function index(){
         $this->load->model('Admin_model');
         $data["title"] = "Dashboard";
@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
         $this->load->view('admin/adminDashboard_view');
         $this->load->view('admin/footerAdmin_view');
     }
-    
+
     public function profile(){
         $this->load->model('Admin_model');
         $data['title'] = "Admin Profile";
