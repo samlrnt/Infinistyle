@@ -33,6 +33,7 @@
             <div class="col-md-12">
                 <div class="card-group">
                 <?php foreach($result as $card){ ?>
+                    <?php $id = $card['productID']; ?>
                     <div class="col-md-3 mt-2 mb-2">
                         <div class="card card-lift--hover shadow border-0">
                             <img src="<?php echo $card['productImage'] ?>" alt="<?php echo $card['productName']?>">
@@ -43,7 +44,7 @@
                                   <span>Rp <?php echo $card['productPrice']?></span>
                                 </div>
                                 <button class="btn btn-icon btn-3 btn-warning" type="button">
-                                    <span class="btn-inner--text" href="#"><a class="text-white" href="<?php echo base_url('shop/details');?>">Details</a></span>
+                                    <span class="btn-inner--text" href="#"><a class="text-white" href="<?php echo site_url('shop/details?id='.$card['productID']);?>">Details</a></span>
                                 </button>
                             </div>
                         </div>
