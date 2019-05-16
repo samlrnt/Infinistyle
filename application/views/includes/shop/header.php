@@ -32,9 +32,6 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="#">Accessories</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Toys</a>
-      </li>
     </ul>
     <!-- Content -->
     <div class="main-content">

@@ -70,6 +70,7 @@ class Admin extends CI_Controller {
         $this->load->view('admin/headerAdmin_view', $data);
         $this->load->view('admin/itemList_view', $data);
         $this->load->view('admin/footerAdmin_view');
+<<<<<<< HEAD
    }
     
    public function customers(){
@@ -158,4 +159,8 @@ class Admin extends CI_Controller {
        $result = $this->Admin_model->insert($values);
        echo $result;
    }
+=======
+    }
+
+>>>>>>> Admin Edits
 }
