@@ -37,7 +37,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="mb-0">Transactions List</h3>
+              <h3 class="mb-0 title">Transactions List</h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
@@ -48,7 +48,6 @@
                     <th scope="col">Status</th>
                     <th scope="col">Customer ID</th>
                     <th scope="col">Action</th>
-                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -62,55 +61,40 @@
                       </span>
                     </td>
                     <td><?= $orders[$i]["customerID"]; ?></td>
-                    <td class="text-right">
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editModal">
+                    <td class="text-left">
+                        <button type="button" class="btn btn-info edit" data-edit="<?= $orders[$i]["orderID"]; ?>" data-toggle="modal" data-target="#editModal">
                             Edit
                         </button>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#deleteModal">
+                        <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#details<?= $orders[$i]["orderID"]; ?>" aria-expanded="false" aria-controls="details">
+                            Details
+                        </button>
+                        <button type="button" class="btn btn-warning delete" data-delete="<?= $orders[$i]["orderID"]; ?>" data-toggle="modal" data-target="#deleteModal">
                             Delete
                         </button>
-                          <!-- Modal Edit -->
-                        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                ...
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success" onclick="window.location = '<?php echo base_url('admin/orders/update_order')?>'">Save changes</button>
-                              </div>
-                            </div>
-                          </div>
+                          
                         </div>
+                        
                         </div>
-                        <!-- Modal Delete -->
-                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                ...
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success" onclick="window.location = '<?php echo base_url('admin/orders/delete_order')?>'">Save changes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="7" class="collapse" id="details<?= $orders[$i]["orderID"]; ?>">
+                      <table class="table table-striped">
+                        <thead>
+                          <th><h4>Orders</h4></th>
+                          <th><h4>Quantity</h4></th>
+                        </thead>
+                        <tbody>
+                          <?php foreach($orderDetails as $od) {?>
+                            <?php if($od["orderID"] == $orders[$i]["orderID"]) { ?>
+                              <tr>
+                                <td><?= $od["productName"]; ?></td>
+                                <td><?= $od["qty"]; ?></td>
+                              </tr>
+                            <?php } ?>
+                          <?php } ?>
+                        </tbody>
+                      </table>
                     </td>
                   </tr>
                   <?php } ?>
@@ -173,3 +157,57 @@
       </footer>
     </div>
   </div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="orderID">
+        <div class="row">
+          <div class="col-md">
+            <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status">
+              <option value='"on process"'>"on process"</option>
+              <option value="Shipping">Shipping</option>
+            </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success change">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="temp">
+        <h1>Delete It?</h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success deletecnf">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

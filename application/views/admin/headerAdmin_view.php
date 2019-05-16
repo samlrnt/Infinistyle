@@ -62,12 +62,12 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/');?>">
+            <a class="nav-link" href="<?= base_url('admin/dashboard');?>">
               <i class="ni ni-tv-2 text-primary"></i> Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/orders');?>">
+            <a class="nav-link" href="<?= base_url('admin/admin/orders');?>">
               <i class="ni ni-bullet-list-67 text-red"></i>Orders
             </a>
           </li>
@@ -77,7 +77,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('admin/customers');?>">
+            <a class="nav-link" href="<?= base_url('admin/admin/customers');?>">
               <i class="ni ni-satisfied text-yellow"></i>Customers
             </a>
           </li>

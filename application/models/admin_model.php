@@ -43,18 +43,39 @@ class Admin_model extends CI_Model {
         return $result->result_array();
     }
 
-    public function clicked_item($item){
-        $query = "SELECT * FROM products WHERE ProductID = '$item'";
+    public function clicked($param){
+        $query = "SELECT * FROM ".$param['table']." WHERE ".$param['where']." = '".$param['id']."'";
         $result = $this->db->query($query);
 
         return $result->result_array();
     }
 
-    public function update($item){
-        $this->db->update('products',$item,"ProductID = ".$item["ProductID"]);
+    public function update($values, $table){
+        if($table == 'products'){
+            $sql = $this->db->update($table,$values,"productID = ".$values["productID"]);
+        }
+        else if($table == 'customers'){
+            $sql = $this->db->update($table,$values,"customerID = ".$values["customerID"]);
+        }
+        else if($table == 'orders'){
+            $sql = $this->db->update($table,$values,"orderID = ".$values["orderID"]);
+        }
+        return $sql;
     }
 
     public function insert($item){
         $this->db->insert('products',$item);
+    }
+
+    public function delete($param){
+        $this->db->where($param['where'],$param['id']);
+        return $this->db->delete($param['table']);
+    }
+
+    public function orderDetails(){
+        $sql = "SELECT orderID, productName, qty FROM orderdetails AS d, products AS p WHERE d.productID = p.productID order by orderID";
+        $result = $this->db->query($sql);
+
+        return $result->result_array();
     }
 }
